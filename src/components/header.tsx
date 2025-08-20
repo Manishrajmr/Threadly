@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { redirect } from "next/navigation";
 import {
   Popover,
   PopoverContent,
@@ -15,6 +16,11 @@ import { LogOut } from "lucide-react";
 const HeaderPage = () => {
 
   const { data: session, status } = useSession();
+
+  const handleLogOut = () => {
+    signOut();
+    redirect("/");
+  }
 
   return (
     <div className="grid grid-cols-3 h-14 items-center">
@@ -42,7 +48,7 @@ const HeaderPage = () => {
                 </PopoverTrigger>
                 <PopoverContent>
                     
-                    <Button onClick={()=>signOut()}><LogOut/> Sign out</Button>
+                    <Button onClick={handleLogOut}><LogOut/> Sign out</Button>
                     
                 </PopoverContent>
             </Popover>

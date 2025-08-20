@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopicShowPage = () => {
+const TopicsCard = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const TopicShowPage = () => {
   );
 }
 
-export default TopicShowPage;
+export default TopicsCard;

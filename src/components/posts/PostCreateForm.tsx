@@ -14,17 +14,21 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "../ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { createTopics } from "@/actions/create-topics"
 import { useActionState } from "react"
+import { createPost } from "@/actions/create-post"
 
-export function TopicCreateForm() {
+type CreatePostFormProps = {
+    slug:string,
+}
+
+export function PostCreateForm({ slug }: CreatePostFormProps) {
   
-  const [formState,action] = useActionState(createTopics,{errors:{}});
+  const [formState,action] = useActionState(createPost.bind(null,slug),{errors:{}});
   
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button>New Topic</Button>
+        <Button>New post</Button>
       </AlertDialogTrigger>
 
 
@@ -33,23 +37,24 @@ export function TopicCreateForm() {
 
         <form action={action}>
                   <AlertDialogHeader>
-          <AlertDialogTitle>Create a Topic</AlertDialogTitle>
+          <AlertDialogTitle>Create a Post</AlertDialogTitle>
           <AlertDialogDescription>
-            Write a new topic to start discussion. Click save when you're done.
+            Write a new post. click save when you are done.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
         <div className="grid gap-2 py-4">
             <div >
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" />
+                <Label htmlFor="title">Name</Label>
+                <Input id="title" name="title" />
             </div>
-            {formState.errors.name && <p className="text-red-400 text-sm">{formState.errors.name}</p>}
+            {formState.errors.title && <p className="text-red-400 text-sm">{formState.errors.title}</p>}
              <div>
-                <Label htmlFor="description" className="text-right">Description</Label>
-                <Textarea id="description" name="description" />
+                <Label htmlFor="content" className="text-right">Content</Label>
+                <Textarea id="content" name="content" />
             </div>
-            {formState.errors.description && <p className="text-red-400 text-sm">{formState.errors.description}</p>}
+            {formState.errors.content && <p className="text-red-400 text-sm">{formState.errors.content}</p>}
+            {formState.errors.formError && <p className="text-red-400 text-sm">{formState.errors.formError}</p>}
         </div>
 
 

@@ -23,7 +23,7 @@ const HeaderPage = () => {
   }
 
   return (
-    <div className="grid grid-cols-3 h-14 items-center">
+    <div className="grid grid-cols-3 px-1 h-14 items-center">
      <div className="flex justify-start " >
         <h1 className="text-2xl font-bold" >Threadly</h1>
      </div>

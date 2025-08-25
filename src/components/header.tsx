@@ -11,6 +11,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { LogOut } from "lucide-react";
+import SearchInput from "./SearchInput";
 
 
 const HeaderPage = () => {
@@ -29,10 +30,8 @@ const HeaderPage = () => {
      </div>
 
      <div className="flex justify-center " >
-       <Input type="text" placeholder="search post.." />
+       <SearchInput/>
      </div>
-
-
 
      <div className="flex justify-end gap-2" >
 

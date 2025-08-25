@@ -12,7 +12,7 @@ const CommentList:React.FC<CommentListProps>= async ({postId}) => {
     const topLevelComments = comments.filter((comment) => comment.parentId == null);
   return (
     <div>
-       <h1 className='font-bold text-lg'>All 0 comments</h1>
+       <h1 className='font-bold text-lg'>All Comments</h1>
        {
         topLevelComments.map((comment)=>(
             <CommentShow key={comment.id} postId={comment.postId} commentId={comment.id}/>

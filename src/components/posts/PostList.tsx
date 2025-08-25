@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Card,
@@ -9,14 +10,17 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import {PostWithData} from "@/lib/query/post"
+import { redirect } from "next/navigation";
+
 
 type PostListProps = {
-  fetchData:()=> Promise<PostWithData[]>
+  fetchData:()=> Promise<PostWithData[]>,
 }
 
 const PostList:React.FC<PostListProps> = async ({fetchData}) => {
 
   const posts = await fetchData();
+
 
   console.log(posts);
   return (
@@ -24,7 +28,7 @@ const PostList:React.FC<PostListProps> = async ({fetchData}) => {
       {
       posts.map((post)=>(
         
-        <Card key={post.id} >
+        <Card key={post.id} className='cursor-pointer'>
           <CardHeader className='font-bold' >
             <CardTitle>{post.title}</CardTitle>
             <CardDescription className='flex  justify-between'>
@@ -32,7 +36,6 @@ const PostList:React.FC<PostListProps> = async ({fetchData}) => {
               <h1>{post._count.comments} comments</h1>
             </CardDescription>
           </CardHeader>
-       
         </Card>
       ))
       }

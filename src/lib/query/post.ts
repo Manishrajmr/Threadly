@@ -1,7 +1,7 @@
 import type { Post } from "@/generated/prisma"
 import {prisma} from "@/lib/prisma"
 
-type PostWithData = Post & {
+export type PostWithData = Post & {
     topic:{slug:string},
     _count:{comments:number},
     user:{name:string | null}

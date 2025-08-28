@@ -1,7 +1,6 @@
 "use client"
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -35,7 +34,7 @@ export function TopicCreateForm() {
                   <AlertDialogHeader>
           <AlertDialogTitle>Create a Topic</AlertDialogTitle>
           <AlertDialogDescription>
-            Write a new topic to start discussion. Click save when you're done.
+            Write a new topic to start discussion. Click save when you&apos;re done.
           </AlertDialogDescription>
         </AlertDialogHeader>
 

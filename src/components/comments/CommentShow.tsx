@@ -1,6 +1,6 @@
 import React from 'react';
 import { fetchCommentByPostId } from '@/lib/query/comment';
-import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
+import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 import CommentCreateForm from './CommentCreateForm';
 
 

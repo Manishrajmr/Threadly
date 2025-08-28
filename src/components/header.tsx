@@ -1,7 +1,5 @@
 "use client";
-import React, { Suspense } from "react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { redirect } from "next/navigation";
@@ -16,7 +14,7 @@ import SearchInput from "./SearchInput";
 
 const HeaderPage = () => {
 
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const handleLogOut = () => {
     signOut();

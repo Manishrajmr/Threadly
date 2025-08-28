@@ -1,36 +1,18 @@
 // import type { NextConfig } from "next";
 
-// // const nextConfig: NextConfig = {
-// //   /* config options here */
-// // };
-
-// // next.config.js
-// import path from "path";
-
-// module.exports = {
-//   webpack: (config) => {
-//     // Ignore system folders like Application Data
-//     config.watchOptions = {
-//       ignored: [
-//         "**/node_modules",
-//         "**/.git",
-//         "**/Application Data/**",
-//       ],
-//     };
-//     return config;
-//   },
+// const nextConfig: NextConfig = {
+//   /* config options here */
 // };
-
 
 // export default nextConfig;
 
-// next.config.js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   experimental: {
-    optimizeCss: false,   // disable lightningcss
-    css: false,           // force disable css bundler
+    optimizeCss: false, // LightningCSS disable
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
+
